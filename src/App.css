@@ -1,38 +1,170 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body, .App {
+  background: #f4f6fa;
   min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.main-header {
+  background: #3f51b5;
+  color: #fff;
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+main {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem 2.5rem 1.5rem;
+}
+
+.task-form {
   display: flex;
-  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.task-form input[type="text"] {
+  flex: 2;
+  padding: 0.5rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+.task-form select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+.task-form button {
+  background: #3f51b5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.task-form button:hover {
+  background: #283593;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.task-list-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 0.5rem;
+}
+.clear-all {
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+.clear-all:hover {
+  background: #b71c1c;
 }
 
-.App-link {
-  color: #61dafb;
+.task-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid #eee;
+  font-size: 1.05rem;
+  transition: background 0.2s;
+}
+.task-item:last-child {
+  border-bottom: none;
+}
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #aaa;
+}
+.task-item label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex: 1;
+  cursor: pointer;
+}
+.task-category {
+  font-size: 0.85em;
+  color: #3f51b5;
+  margin-left: 0.5em;
+}
+.delete {
+  background: none;
+  border: none;
+  color: #e53935;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0 0.3em;
+  transition: color 0.2s;
+}
+.delete:hover {
+  color: #b71c1c;
+}
+.empty {
+  text-align: center;
+  color: #aaa;
+  padding: 1.5rem 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.back-to-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  background: #3f51b5;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  z-index: 1000;
+  transition: background 0.2s;
+}
+.back-to-top:hover {
+  background: #283593;
+}
+
+.footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.95rem;
+  margin: 2rem 0 1rem 0;
+}
+
+@media (max-width: 600px) {
+  main {
+    max-width: 98vw;
+    padding: 1rem 0.3rem 2rem 0.3rem;
   }
-  to {
-    transform: rotate(360deg);
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
   }
 }
